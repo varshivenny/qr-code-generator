@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  transition: background 0.3s;
+}
+
+.container {
+  background: #fff;
+  padding: 22px;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+h2 { font-size: 20px; }
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#qr-box {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  background: white;
+  border-radius: 6px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #111;
+}
+
+.container.dark {
+  background: #222;
+  color: #eee;
+}
+
+input.dark, select.dark {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+button.dark {
+  background: #eee;
+  color: #111;
+}
+
+/* Dark mode switch toggle */
+.switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:#ccc;
+  border-radius:22px;
+  transition:0.3s;
+}
+
+.slider:before {
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  left:2px;
+  bottom:2px;
+  background:white;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+input:checked + .slider {
+  background:#333;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 380px) {
+  .container {
+    padding: 18px;
+    width: 95%;
+  }
+}

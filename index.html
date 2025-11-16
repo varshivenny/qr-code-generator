@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <h2>QR Code Generator</h2>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <input type="text" id="text-input" placeholder="Enter text or URL">
+
+    <select id="size-select">
+      <option value="150">150px</option>
+      <option value="220" selected>220px</option>
+      <option value="300">300px</option>
+      <option value="400">400px</option>
+    </select>
+
+    <div class="controls">
+      <button id="generate-btn">Generate QR</button>
+      <button id="download-btn" disabled>Download</button>
+    </div>
+
+    <div id="qr-box">
+      <canvas id="qr-code"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
